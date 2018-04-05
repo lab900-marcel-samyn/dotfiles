@@ -1,0 +1,7 @@
+[user]
+	name = Marcel Samyn
+	email = dev@mrcl.io
+[push]
+	default = simple
+[credential]
+	helper = cache
