@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -205,4 +205,5 @@ for_window [class="^.*"] border pixel 1
 gaps inner 20
 gaps outer 0
 
-exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
+# Compton is X
+# exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
