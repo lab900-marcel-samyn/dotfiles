@@ -1,0 +1,4 @@
+st.termname: st-256color
+st.shell: /bin/zsh
+st.font: Hack:pixelsize=11:antialias=true:autohint=true;
+st.opacity: 230
