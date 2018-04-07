@@ -149,6 +149,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Volume key support
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+
 ## Base16 Tomorrow Night
 # Author: Chris Kempson (http://chriskempson.com)
 #
