@@ -322,6 +322,9 @@ you should place your code here."
 
   (evil-set-initial-state 'term-mode 'emacs)
 
+  (set-frame-parameter (selected-frame) 'alpha '(85 50))
+  (add-to-list 'default-frame-alist '(alpha (85 50)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
