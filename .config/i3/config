@@ -205,5 +205,8 @@ for_window [class="^.*"] border pixel 1
 gaps inner 20
 gaps outer 0
 
-# Compton is X
-# exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/bin/nm-applet
+
+exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
+exec --no-startup-id setxkbmap -option caps:escape
