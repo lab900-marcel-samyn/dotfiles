@@ -1,7 +1,7 @@
 ! "Enabled modi" Set from: Default
-! rofi.modi:                           window,run,ssh
+rofi.modi:                           window,run,ssh,drun
 ! "Window opacity" Set from: Default
-! rofi.opacity:                        100
+rofi.opacity:                        85
 ! "Window width" Set from: Default
 ! rofi.width:                          50
 ! "Number of lines" Set from: Default
@@ -31,7 +31,7 @@
 ! "Always show number of lines" Set from: Default
 ! rofi.fixed-num-lines:                false
 ! "Terminal to use" Set from: Default
-! rofi.terminal:                       rofi-sensible-terminal
+rofi.terminal:                       st
 ! "Ssh client to use" Set from: Default
 ! rofi.ssh-client:                     ssh
 ! "Ssh command to execute" Set from: Default

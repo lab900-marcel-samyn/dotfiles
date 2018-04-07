@@ -36,7 +36,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -show drun -theme base16-default-dark
+bindsym $mod+space exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -204,7 +204,7 @@ client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
-# Disable window titlebars (necessary for i3-gaps
+# Disable window titlebars (necessary for i3-gaps)
 for_window [class="^.*"] border pixel 1
 
 gaps inner 20
@@ -213,5 +213,5 @@ gaps outer 0
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/nm-applet
 
-exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
+# exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
 exec --no-startup-id setxkbmap -option caps:escape
