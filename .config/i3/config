@@ -207,8 +207,11 @@ client.background       $base07
 # Disable window titlebars (necessary for i3-gaps)
 for_window [class="^.*"] border pixel 1
 
-gaps inner 20
+gaps inner 10
 gaps outer 0
+
+bindsym $mod+bracketleft gaps inner all minus 10
+bindsym $mod+bracketright gaps inner all plus 10
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/nm-applet
