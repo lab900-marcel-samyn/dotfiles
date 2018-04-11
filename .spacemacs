@@ -320,6 +320,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq powerline-default-separator 'slant)
+
   (evil-set-initial-state 'term-mode 'emacs)
 
   (set-frame-parameter (selected-frame) 'alpha '(85 50))
