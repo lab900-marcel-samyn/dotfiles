@@ -8,13 +8,31 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #55
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+[colors]
+base00 = ${xrdb:color0:#000000}
+base01 = ${xrdb:color10:#000000}
+base02 = ${xrdb:color11:#000000}
+base03 = ${xrdb:color8:#000000}
+base04 = ${xrdb:color12:#000000}
+base05 = ${xrdb:color7:#000000}
+base06 = ${xrdb:color13:#000000}
+base07 = ${xrdb:color15:#000000}
+base08 = ${xrdb:color1:#000000}
+base09 = ${xrdb:color9:#000000}
+base0A = ${xrdb:color3:#000000}
+base0B = ${xrdb:color2:#000000}
+base0C = ${xrdb:color6:#000000}
+base0D = ${xrdb:color4:#000000}
+base0E = ${xrdb:color5:#000000}
+base0F = ${xrdb:color14:#000000}
+
+background = ${colors.base00}
+background-alt = ${colors.base01}
+foreground = ${colors.base05}
+foreground-alt = ${colors.base04}
+primary = ${colors.base0D}
+secondary = ${colors.base0B}
+alert = ${colors.base0A}
 
 [global/wm]
 margin-top = 5
@@ -44,15 +62,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Input Mono:size=8
-font-1 = Unifont:size=8:antialias=false
-font-2 = siji:pixelsize=10
-font-3 = MaterialDesignIcons:size=10
-font-4 = FontAwesome:size=10
+font-0 = siji:pixelsize=10
+font-1 = Input Mono:size=8
+font-2 = MaterialDesignIcons:size=10
+font-3 = FontAwesome:size=10
+font-4 = Unifont:size=8:antialias=false
 
-modules-left = bspwm i3 xwindow
+modules-left = i3 xwindow
 modules-center = 
-modules-right = xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = volume memory cpu wlan battery battery1 temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -67,8 +85,8 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 
 [module/xwindow]
@@ -193,25 +211,25 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+; format-underline = #f90000
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+; format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${self.format-connected-underline}
+; format-connected-underline = #9f78e1
+; format-disconnected-underline = ${colors.alert}
 
 label-connected = %essid%
 label-disconnected = %ifname% disconnected
@@ -226,7 +244,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eth0
+interface = enp0s25
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -250,7 +268,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+; format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -290,14 +308,36 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+; format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+; format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+; format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -316,13 +356,13 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+; format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+; format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label = %temperature-c%
+label-warn = %temperature-c%
+; label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
 ramp-1 = 
@@ -334,7 +374,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open =  power
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
@@ -349,10 +389,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = systemctl reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = systemctl poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
