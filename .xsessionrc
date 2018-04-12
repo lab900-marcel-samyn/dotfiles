@@ -2,3 +2,5 @@
 
 ~/.fehbg &
 setxkbmap -option caps:escape
+xset +fp /home/marcel/.fonts
+xset fp rehash

@@ -73,3 +73,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_tomorrow-night
+
+if type python3.6 > /dev/null; then
+  alias python=python3.6
+  alias python3=python3.6
+fi
+[ -f ~/.fzf.colors ] && source ~/.fzf.colors
