@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-killall polybar
+killall polybar -q
 polybar example &
