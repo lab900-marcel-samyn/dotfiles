@@ -202,11 +202,12 @@ gaps outer 0
 bindsym $mod+bracketleft gaps inner all minus 10
 bindsym $mod+bracketright gaps inner all plus 10
 
+exec --no-startup-id ~/.xsessionrc
 exec --no-startup-id run-polybar.sh
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/nm-applet
 
-# exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 

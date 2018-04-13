@@ -1,3 +1,5 @@
+#include ".Xresources.d/colors"
+
 st.termname: st-256color
 st.shell: /bin/zsh
 st.font: Input Mono:pixelsize=11:antialias=true:autohint=true;
@@ -8,4 +10,3 @@ Xft.dpi: 96
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-
