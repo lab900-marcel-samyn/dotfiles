@@ -52,7 +52,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-full-span nil)
-     ;; spell-checking
+     spell-checking
      syntax-checking
      version-control
      docker
