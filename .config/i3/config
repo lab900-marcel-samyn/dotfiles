@@ -206,4 +206,5 @@ exec --no-startup-id /usr/bin/nm-applet
 
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
+exec --no-startuo-id redshift
 
