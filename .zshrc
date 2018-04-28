@@ -19,10 +19,24 @@ urldecode(){
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt inc_append_history
 
-# Use Vi mode
+
+
+# VI MODE
+# -------
 bindkey -v
+
+# Set Vi mode switch delay to 0.1 seconds
+export KEYTIMEOUT=1
+
+# Keep Ctrl+{N,P} working
+bindkey '^P' up-history
+bindkey '^N' down-history
+
+# Keep backspace and Ctrl+h working
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
 
 # Fix Perl language errors
 export LC_CTYPE=en_US.UTF-8
@@ -76,4 +90,7 @@ if type python3.6 > /dev/null; then
   alias python=python3.6
   alias python3=python3.6
 fi
+
+_FZF_BINDINGS_FILE="/usr/share/fzf/shell/key-bindings.zsh"
+test -e $_FZF_BINDINGS_FILE && source $_FZF_BINDINGS_FILE
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
