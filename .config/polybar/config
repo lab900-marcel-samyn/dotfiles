@@ -25,7 +25,7 @@ base0D = ${xrdb:color4:#000000}
 base0E = ${xrdb:color5:#000000}
 base0F = ${xrdb:color14:#000000}
 
-background = ${colors.base00}
+background = #000000
 background-alt = ${colors.base01}
 foreground = ${colors.base05}
 foreground-alt = ${colors.base04}
@@ -44,7 +44,6 @@ height = 27
 offset-x = 0
 offset-y = 0
 
-;background = ${xrdb:color9}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -53,8 +52,8 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-border-bottom-size = 2
-border-bottom-color = #333
+; border-bottom-size = 2
+; border-bottom-color = #333
 
 padding-left = 0
 padding-right = 2
@@ -73,8 +72,8 @@ modules-right = volume memory cpu wlan battery battery1 temperature date updates
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+tray-transparent = false
+tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -210,7 +209,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #f90000
+format-underline = ${colors.base02}
 label = %percentage%%
 
 [module/memory]
@@ -218,7 +217,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #4bffdc
+format-underline = ${colors.base02}
 label = %percentage_used%%
 
 [module/wlan]
@@ -227,11 +226,11 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-; format-connected-underline = #9f78e1
-; format-disconnected-underline = ${colors.alert}
+format-connected-underline = ${colors.base02}
+format-disconnected-underline = ${colors.base08}
 
 label-connected = %essid%
-label-disconnected = %ifname% disconnected
+label-disconnected = %ifname%
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -267,7 +266,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #0a6cf5
+format-underline = ${colors.base02}
 
 label = %date% %time%
 
@@ -275,12 +274,11 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume-underline = ${colors.base02}
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -300,6 +298,11 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.foreground-alt}
+
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -307,14 +310,14 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-; format-charging-underline = #ffb52a
+format-charging-underline = ${colors.base02}
 
 format-discharging = <ramp-capacity> <label-discharging>
-; format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.base02}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-; format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${colors.base02}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -334,9 +337,12 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.base02}
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.base02}
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${colors.base02}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -355,13 +361,13 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-; format-underline = #f50a4d
+format-underline = ${colors.base02}
 format-warn = <ramp> <label-warn>
-; format-warn-underline = ${self.format-underline}
+format-warn-underline = ${colors.alert}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-; label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
 ramp-1 = 
