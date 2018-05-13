@@ -339,6 +339,8 @@ you should place your code here."
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
 
+  (load "~/org/config")
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
