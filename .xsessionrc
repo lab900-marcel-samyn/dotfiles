@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
+xrdb ~/.Xresources
 ~/.fehbg &
 setxkbmap -option caps:escape
 xset +fp /home/marcel/.fonts
 xset fp rehash
+xrandr --output DVI-D-0 --rotate left --output HDMI-0 --primary --auto
