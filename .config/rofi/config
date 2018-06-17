@@ -31,3 +31,6 @@ rofi.color-urgent:  #282a2e, #cc6666, #282a2e, #282a2e, #cc6666
 
 ! Set the desired separator style
 rofi.separator-style: solid
+
+rofi.theme: /home/marcel/.local/share/rofi/themes/material.rasi
+rofi.font: InputMono 12

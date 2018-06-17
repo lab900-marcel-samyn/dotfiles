@@ -209,4 +209,5 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 exec --no-startup-id syncthing-gtk
+exec --no-startup-id blueman-applet
 
