@@ -97,3 +97,12 @@ fi
 _FZF_BINDINGS_FILE="/usr/share/fzf/shell/key-bindings.zsh"
 test -e $_FZF_BINDINGS_FILE && source $_FZF_BINDINGS_FILE
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
+
+# GPG FOR SSH
+# -----------
+
+export SSL_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+export CC=$(which clang)
+export CXX=$(which clang++)
