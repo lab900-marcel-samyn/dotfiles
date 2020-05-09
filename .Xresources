@@ -1,6 +1,6 @@
 st.termname: st-256color
 st.shell: /bin/zsh
-st.font: Input Mono:pixelsize=11:antialias=true:autohint=true;
+st.font: IBM Plex Mono:pixelsize=11:antialias=true:autohint=true;
 st.opacity: 230
 
 antialias: 1

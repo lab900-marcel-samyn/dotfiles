@@ -106,3 +106,12 @@ gpgconf --launch gpg-agent
 
 export CC=$(which clang)
 export CXX=$(which clang++)
+
+# SHORTCUTS
+# ---------
+
+alias zsn="\cd ~/code/zec/SilverNode"
+alias zsnb="\cd ~/code/zec/SilverNode/build"
+alias znr="\cd ~/code/zec/NeonRAW"
+alias znui="\cd ~/code/zec/nui"
+alias zcol="\cd ~/code/zec/color"

@@ -61,3 +61,14 @@
           (clang-format-buffer))
         ;; Return nil, to continue saving.
         nil))))
+
+;; Set up Angular LSP
+(setq lsp-clients-angular-language-server-command
+      '("node"
+        "/home/marcel/.config/yarn/global/node_modules/@angular/language-server"
+        "--ngProbeLocations"
+        "/home/marcel/.config/yarn/global/node_modules"
+        "--tsProbeLocations"
+        "/home/marcel/.config/yarn/global/node_modules"
+        "--stdio"
+        ))
