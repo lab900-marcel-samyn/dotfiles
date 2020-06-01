@@ -110,8 +110,28 @@ export CXX=$(which clang++)
 # SHORTCUTS
 # ---------
 
-alias zsn="\cd ~/code/zec/SilverNode"
-alias zsnb="\cd ~/code/zec/SilverNode/build"
-alias znr="\cd ~/code/zec/NeonRAW"
-alias znui="\cd ~/code/zec/nui"
-alias zcol="\cd ~/code/zec/color"
+export ZEC_HOME="$HOME/code/zec"
+alias zsn="\cd $ZEC_HOME/SilverNode"
+alias zsnb="\cd $ZEC_HOME/SilverNode/build"
+alias znr="\cd $ZEC_HOME/NeonRAW"
+alias znui="\cd $ZEC_HOME/nui"
+alias zcol="\cd $ZEC_HOME/color"
+
+gpzec(){
+  for REPO in $(ls "$ZEC_HOME/")
+  do
+    if [ -d "$ZEC_HOME/$REPO" ]
+    then
+      echo "---"
+      echo "--- Updating $ZEC_HOME/$REPO"
+      if [ -d "$ZEC_HOME/$REPO/.git" ]
+      then
+        cd "$ZEC_HOME/$REPO"
+        git status
+        git pull
+      else
+        echo "--- Skipping because it doesn't look like it has a .git folder."
+      fi
+    fi
+  done
+}
